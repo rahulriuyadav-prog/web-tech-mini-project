@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Yadav | Web Tech Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS STYLES */
+        :root {
+            --primary: #3498db;
+            --dark: #2c3e50;
+            --light: #f4f4f4;
+            --bg: #ffffff;
+            --text: #333333;
+            --card-bg: #ffffff;
+        }
+
+        .dark-theme {
+            --bg: #121212;
+            --text: #ffffff;
+            --light: #1e1e1e;
+            --card-bg: #1e1e1e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: inherit; font-weight: 500; }
+
+        #theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background: linear-gradient(to right, var(--bg), var(--light));
+        }
+
+        #hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; }
+        #hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            width: max-content;
+        }
+
+        /* Global Sections */
+        .container { padding: 80px 10%; }
+        h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+        h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin-top: 10px; }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover { transform: translateY(-10px); }
+
+        .project-img {
+            height: 200px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .project-info { padding: 1.5rem; }
+
+        /* Contact Form */
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            gap: 1rem;
+        }
+
+        #contact-form input, #contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: var(--card-bg);
+            color: var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Rahul<span>Yadav</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><button id="theme-toggle">🌙</button></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <h1>Building Digital<br>Experiences.</h1>
+        <p>I am a <strong>Web Tech Specialist</strong> focused on clean code and user-centered design.</p>
+        <a href="#projects" class="cta-btn">View My Work</a>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p style="max-width: 800px; font-size: 1.1rem;">
+            I'm <strong>Rahul Yadav</strong>. I specialize in bridging the gap between design and technology. 
+            My goal is to create web applications that are not only visually stunning but also highly performant 
+            and accessible to everyone.
+        </p>
+    </section>
+
+    <section id="skills" class="container" style="background: var(--light);">
+        <h2>Tech Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Frontend</h3>
+                <p>HTML5, CSS3, JavaScript (ES6+), Responsive UI</p>
+            </div>
+            <div class="skill-card">
+                <h3>Optimization</h3>
+                <p>SEO, Web Vitals, Performance Tuning</p>
+            </div>
+            <div class="skill-card">
+                <h3>Development</h3>
+                <p>Git, Version Control, Modern Dev Tools</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-img">Project 1</div>
+                <div class="project-info">
+                    <h3>Responsive Dashboard</h3>
+                    <p>A data visualization tool built with modern JS.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project 2</div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>Clean, minimal, and fast loading portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="background: var(--light);">
+        <h2>Get In Touch</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; opacity: 0.6;">
+        <p>&copy; 2024 Rahul Yadav. Built with HTML, CSS, & JS.</p>
+    </footer>
+
+    <script>
+        // DARK MODE LOGIC
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+        });
+
+        // FORM SUBMISSION LOGIC
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent successfully! Rahul will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
